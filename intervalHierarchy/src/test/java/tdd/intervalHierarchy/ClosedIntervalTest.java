@@ -7,30 +7,37 @@ import junit.framework.TestCase;
 public class ClosedIntervalTest extends TestCase {
 
 	@Test
-	public void testIntersectedOverlappedOnLeft() {
+	public void testIsIntersectedOverlappedOnLeft() {
 		ClosedInterval one = new ClosedIntervalBuilder().min(3).max(14).build();
 		ClosedInterval another = new ClosedIntervalBuilder().min(1).max(7).build();
 		assertTrue(one.isIntersected(another));
 	}
 	
 	@Test
-	public void testIntersectedInside() {
+	public void testIsIntersectedInside() {
 		ClosedInterval one = new ClosedIntervalBuilder().min(3).max(14).build();
 		ClosedInterval another = new ClosedIntervalBuilder().min(5).max(7).build();
 		assertTrue(one.isIntersected(another));
 	}
 	
 	@Test
-	public void testIntersectedOverlappedOnRight() {
+	public void testIsIntersectedOverlappedOnRight() {
 		ClosedInterval one = new ClosedIntervalBuilder().min(3).max(14).build();
 		ClosedInterval another = new ClosedIntervalBuilder().min(5).max(19).build();
 		assertTrue(one.isIntersected(another));
 	}
 	
 	@Test
-	public void testIntersectedOutsida() {
+	public void testIsIntersectedOutside() {
 		ClosedInterval one = new ClosedIntervalBuilder().min(3).max(14).build();
 		ClosedInterval another = new ClosedIntervalBuilder().min(1).max(19).build();
 		assertTrue(one.isIntersected(another));
+	}
+	
+	@Test
+	public void testIsNotIntersectedOnLeft() {
+		ClosedInterval one = new ClosedIntervalBuilder().min(3).max(14).build();
+		ClosedInterval another = new ClosedIntervalBuilder().min(1).max(2).build();
+		assertFalse(one.isIntersected(another));
 	}
 }
