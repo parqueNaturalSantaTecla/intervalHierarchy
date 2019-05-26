@@ -11,7 +11,7 @@ public class ClosedInterval {
 	}
 
 	public boolean isIntersected(ClosedInterval another) {
-		return !(another.max < this.min || this.max < another.min);
+		return this.min <= another.max  && another.min <= this.max;
 	}
 
 	
