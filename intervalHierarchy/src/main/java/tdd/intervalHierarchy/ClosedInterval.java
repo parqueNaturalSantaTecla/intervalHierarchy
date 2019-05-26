@@ -7,8 +7,7 @@ public class ClosedInterval {
 	}
 
 	public boolean isIntersected(ClosedInterval another) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	
