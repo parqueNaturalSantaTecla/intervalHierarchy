@@ -1,12 +1,12 @@
 package tdd.intervalHierarchy;
 
-public class Interval {
+public class ClosedInterval {
 
-	public Interval(double min, double max) {
+	public ClosedInterval(double min, double max) {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isIntersected(Interval another) {
+	public boolean isIntersected(ClosedInterval another) {
 		// TODO Auto-generated method stub
 		return false;
 	}
